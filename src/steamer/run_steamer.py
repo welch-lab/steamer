@@ -319,8 +319,8 @@ def mc_fractions(mcds: Path, threshold: int):
         warnings.simplefilter("ignore")
         cgn = open_mcds["TEs_da"].sel(mc_type="CGN")
         chn = open_mcds["TEs_da"].sel(mc_type="CHN")
-        cgnf = cgn.where(cgn.sel(count_type="mc") > threshold)
-        chnf = chn.where(chn.sel(count_type="mc") > threshold)
+        cgnf = cgn.where(cgn.sel(count_type="cov") > threshold)
+        chnf = chn.where(chn.sel(count_type="cov") > threshold)
 
 
         # here we expected to see a true_divide warning due to cov=0
